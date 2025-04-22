@@ -1,21 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Supplementary Material</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2rem auto;
+            max-width: 800px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 1rem;
+        }
+
+        h1 {
+            color: #111;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.3rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Supplementary Material</h1>
-    <p>This site contains supplementary material for our anonymous submission.</p>
 
-    <h2>Audio Example</h2>
-    <audio controls>
-        <source src="assets/audio/sample1.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio>
+    <p>
+        In this work, we aim to imitate the human ability to selectively attend to a single speaker,
+        even in the presence of multiple simultaneous talkers. To achieve this, we propose a novel
+        approach for TSE that leverages the listener’s HRTF to isolate the desired speaker. Notably,
+        our method does not rely on speaker embeddings, making our solution speaker independent and
+        enabling strong generalization across multiple speech datasets in different languages.
+    </p>
+
+    <p>
+        We employ a fully complex-valued neural network that operates directly on the complex-valued
+        STFT of the mixed audio signals. This stands in contrast to conventional approaches that use
+        spectrograms or treat the real and imaginary components of the STFT as separate real-valued
+        inputs.
+    </p>
+
+    <p>
+        We began with the anechoic and noise-free setting, where the proposed method demonstrated
+        superior extraction performance while successfully preserving the binaural cues of the desired
+        signal.
+    </p>
+
+    <p>
+        Furthermore, we extended our approach to the reverberant setting, aiming to perform
+        dereverberation alongside target speaker extraction. This resulted in a method that remains
+        effective even in reverberant environments, maintaining the speech clarity and its sense of
+        direction.
+    </p>
 </body>
 
 </html>
