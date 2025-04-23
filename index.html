@@ -13,6 +13,23 @@
         </script>
 </head>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const audioElements = document.querySelectorAll('audio');
+
+        audioElements.forEach(audio => {
+            audio.addEventListener('play', () => {
+                audioElements.forEach(other => {
+                    if (other !== audio) {
+                        other.pause();
+                        other.currentTime = 0; // Optional: rewind others to start
+                    }
+                });
+            });
+        });
+    });
+</script>
+
 <body>
     <header>
         <h1>Target Speaker Extraction in a Binaural Setting using HRTFs</h1>
