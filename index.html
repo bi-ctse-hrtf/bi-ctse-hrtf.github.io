@@ -2,61 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Supplementary Material</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 2rem auto;
-            max-width: 800px;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            padding: 1rem;
-        }
-
-        h1 {
-            color: #111;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 0.3rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speaker Extraction Demo</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h1>Supplementary Material</h1>
+    <header>
+        <h1>Target Speaker Extraction</h1>
+        <p><strong>Paper:</strong> "Binaural Target Speaker Extraction using HRTFs and a Complex-Valued Neural Network"
+        </p>
+    </header>
 
-    <p>
-        In this work, we aim to imitate the human ability to selectively attend to a single speaker,
-        even in the presence of multiple simultaneous talkers. To achieve this, we propose a novel
-        approach for TSE that leverages the listener’s HRTF to isolate the desired speaker. Notably,
-        our method does not rely on speaker embeddings, making our solution speaker independent and
-        enabling strong generalization across multiple speech datasets in different languages.
-    </p>
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <p>
+            In this work, we aim to imitate the human ability to selectively attend to a single speaker,
+            even in the presence of multiple simultaneous talkers. To achieve this, we propose a novel
+            approach for TSE that leverages the listener’s HRTF to isolate the desired speaker. Notably,
+            our method does not rely on speaker embeddings, making our solution speaker independent and
+            enabling strong generalization across multiple speech datasets in different languages.
+        </p>
 
-    <p>
-        We employ a fully complex-valued neural network that operates directly on the complex-valued
-        STFT of the mixed audio signals. This stands in contrast to conventional approaches that use
-        spectrograms or treat the real and imaginary components of the STFT as separate real-valued
-        inputs.
-    </p>
+        <p>
+            We employ a fully complex-valued neural network that operates directly on the complex-valued
+            STFT of the mixed audio signals. This stands in contrast to conventional approaches that use
+            spectrograms or treat the real and imaginary components of the STFT as separate real-valued
+            inputs.
+        </p>
 
-    <p>
-        We began with the anechoic and noise-free setting, where the proposed method demonstrated
-        superior extraction performance while successfully preserving the binaural cues of the desired
-        signal.
-    </p>
+        <p>
+            We began with the anechoic and noise-free setting, where the proposed method demonstrated
+            superior extraction performance while successfully preserving the binaural cues of the desired
+            signal.
+        </p>
 
-    <p>
-        Furthermore, we extended our approach to the reverberant setting, aiming to perform
-        dereverberation alongside target speaker extraction. This resulted in a method that remains
-        effective even in reverberant environments, maintaining the speech clarity and its sense of
-        direction.
-    </p>
+        <p>
+            Furthermore, we extended our approach to the reverberant setting, aiming to perform
+            dereverberation alongside target speaker extraction. This resulted in a method that remains
+            effective even in reverberant environments, maintaining the speech clarity and its sense of
+            direction.
+        </p>
+    </section>
+
+    <section id="figures">
+        <h2>Figures</h2>
+        <img src="assets/images/your_figures.png" alt="Figure from the paper" />
+    </section>
+
+    <section id="demos">
+        <h2>Audio Examples</h2>
+
+        <!-- One example -->
+        <div class="example">
+            <h3>Example 1</h3>
+            <p><strong>Mixture:</strong></p>
+            <audio controls src="assets/audio/example1_mix.wav"></audio>
+
+            <p><strong>Extracted Speaker 1:</strong></p>
+            <audio controls src="assets/audio/example1_spk1.wav"></audio>
+
+            <p><strong>Extracted Speaker 2:</strong></p>
+            <audio controls src="assets/audio/example1_spk2.wav"></audio>
+
+            <p><strong>Ground Truth Speaker 1:</strong></p>
+            <audio controls src="assets/audio/example1_gt_spk1.wav"></audio>
+
+            <p><strong>Ground Truth Speaker 2:</strong></p>
+            <audio controls src="assets/audio/example1_gt_spk2.wav"></audio>
+        </div>
+
+        <!-- Duplicate this div for more examples -->
+    </section>
+
+    <footer>
+        <p>Contact: your.email@example.com</p>
+    </footer>
 </body>
 
 </html>
