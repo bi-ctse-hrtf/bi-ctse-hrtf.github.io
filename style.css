@@ -131,7 +131,8 @@ audio {
     gap: 0.3rem;
     justify-content: center;
     margin: 0 auto;
-    /* ⬅️ centers the whole container */
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 
 .spec-images img {
