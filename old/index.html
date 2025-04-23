@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speaker Extraction Demo</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Target Speaker Extraction in a Binaural setting using HRTFs</h1>
+        <p><strong>Paper:</strong> "Binaural Target Speaker Extraction using HRTFs and a Complex-Valued Neural Network"
+        </p>
+    </header>
+
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <p>
+            In this work, we aim to imitate the human ability to selectively attend to a single speaker,
+            even in the presence of multiple simultaneous talkers. To achieve this, we propose a novel
+            approach for TSE that leverages the listener’s HRTF to isolate the desired speaker. Notably,
+            our method does not rely on speaker embeddings, making our solution speaker independent and
+            enabling strong generalization across multiple speech datasets in different languages.
+        </p>
+
+        <p>
+            We employ a fully complex-valued neural network that operates directly on the complex-valued
+            STFT of the mixed audio signals. This stands in contrast to conventional approaches that use
+            spectrograms or treat the real and imaginary components of the STFT as separate real-valued
+            inputs.
+        </p>
+
+        <p>
+            We began with the anechoic and noise-free setting, where the proposed method demonstrated
+            superior extraction performance while successfully preserving the binaural cues of the desired
+            signal.
+        </p>
+
+        <p>
+            Furthermore, we extended our approach to the reverberant setting, aiming to perform
+            dereverberation alongside target speaker extraction. This resulted in a method that remains
+            effective even in reverberant environments, maintaining the speech clarity and its sense of
+            direction.
+        </p>
+    </section>
+
+    <section id="figures">
+        <figure>
+            <img src="assets/images/arc.png" alt="Block diagram of the proposed method" />
+            <figcaption>
+                Figure 1: A block diagram of the proposed method, where
+                \( \boldsymbol{x}_b \) represents the mixed signal in the STFT domain,
+                \( h_d \) denotes the FFT coefficients of the HRTF for the desired speaker’s direction, and
+                \( \hat{\boldsymbol{s}}_d \) represents the extracted speech signal of the desired speaker in the STFT
+                domain.
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/convention.png" alt="Block diagram of the proposed method" />
+            <figcaption>
+                Figure 2: Our measurement system convention, illustrating an example with two concurrent speakers
+                positioned at \( \theta_1 = 40^\circ \) (left) and \( \theta_2 = -30^\circ \) (right), with a fixed
+                elevation $\phi$
+            </figcaption>
+        </figure>
+    </section>
+
+    <section id="demos">
+        <h2>Audio Examples</h2>
+
+        <div class="example">
+            <h3>Example 1: From the WSJ0-CSR1 dataset in an anechoic setting; speaker 1 at -35&deg; and speaker 2 at
+                -90&deg;
+            </h3>
+            <p><strong>Mixture:</strong></p>
+            <audio controls src="assets/audio/anechoic_wsj/mix_0.wav"></audio>
+
+            <p><strong>Extracted Speaker 1:</strong></p>
+            <audio controls
+                src="assets/audio/anechoic_wsj/y_hat_1_0_az_tensor([325])_elev_tensor([0])_sisdr_-20.240114212036133.wav"></audio>
+
+            <p><strong>Extracted Speaker 2:</strong></p>
+            <audio controls
+                src="assets/audio/anechoic_wsj/y_hat_2_0_az_tensor([270])_elev_tensor([-10])_sisdr_-20.710756301879883.wav"></audio>
+            <p><strong>Ground Truth Speaker 1:</strong></p>
+            <audio controls src="assets/audio/anechoic_wsj/y1_0_az_tensor([325])_elev_tensor([0]).wav"></audio>
+
+            <p><strong>Ground Truth Speaker 2:</strong></p>
+            <audio controls src="assets/audio/anechoic_wsj/y2_0_az_tensor([270])_elev_tensor([-10]).wav"></audio>
+        </div>
+
+        <div class="example">
+            <h3>Example 2: From the Librispeech dataset in an anechoic setting; speaker 1 at 20&deg; and speaker 2 at
+                80&deg;
+            </h3>
+            <p><strong>Mixture:</strong></p>
+            <audio controls src="assets/audio/anechoic_libri/mix_0.wav"></audio>
+
+            <p><strong>Extracted Speaker 1:</strong></p>
+            <audio controls
+                src="assets/audio/anechoic_libri/y_hat_1_0_az_tensor([20])_elev_tensor([0])_sisdr_-18.300331115722656.wav"></audio>
+
+            <p><strong>Extracted Speaker 2:</strong></p>
+            <audio controls
+                src="assets/audio/anechoic_libri/y_hat_2_0_az_tensor([80])_elev_tensor([0])_sisdr_-15.585834503173828.wav"></audio>
+            <p><strong>Ground Truth Speaker 1:</strong></p>
+            <audio controls src="assets/audio/anechoic_libri/y1_0_az_tensor([20])_elev_tensor([0]).wav"></audio>
+
+            <p><strong>Ground Truth Speaker 2:</strong></p>
+            <audio controls src="assets/audio/anechoic_libri/y2_0_az_tensor([80])_elev_tensor([0]).wav"></audio>
+        </div>
+
+
+
+        <div class="example">
+            <h3>Example 3: From the Librispeech MLS French dataset in an anechoic setting; speaker 1 at 80&deg; and
+                speaker 2 at 15&deg;</h3>
+            <p><strong>Mixture:</strong></p>
+            <audio controls src="assets/audio/anechoic_libri_fr/mix_472.wav"></audio>
+
+            <p><strong>Extracted Speaker 1:</strong></p>
+            <audio controls
+                src="assets/audio/anechoic_libri_fr/y_hat_1_472_az_tensor([80])_elev_tensor([0])_sisdr_-14.897455215454102.wav"></audio>
+
+            <p><strong>Extracted Speaker 2:</strong></p>
+            <audio controls
+                src="assets/audio/anechoic_libri_fr/y_hat_2_472_az_tensor([15])_elev_tensor([10])_sisdr_-8.94835090637207.wav"></audio>
+            <p><strong>Ground Truth Speaker 1:</strong></p>
+            <audio controls src="assets/audio/anechoic_libri_fr/y1_472_az_tensor([80])_elev_tensor([0]).wav"></audio>
+
+            <p><strong>Ground Truth Speaker 2:</strong></p>
+            <audio controls src="assets/audio/anechoic_libri_fr/y2_472_az_tensor([15])_elev_tensor([10]).wav"></audio>
+        </div>
+    </section>
+
+    <div class="example">
+        <h3>Example 4: From the WSJ0-CSR1 dataset in a reverberant setting; speaker 1 at -25&deg; and
+            speaker 2 at -75&deg;</h3>
+        <p><strong>Mixture:</strong></p>
+        <audio controls src="assets/audio/reverberant_wsj/mix_260.wav"></audio>
+
+        <p><strong>Extracted Speaker 1:</strong></p>
+        <audio controls
+            src="assets/audio/reverberant_wsj/y_hat_1_260_az_tensor([335])_elev_tensor([0])_sisdr_-13.085460662841797.wav"></audio>
+
+        <p><strong>Extracted Speaker 2:</strong></p>
+        <audio controls
+            src="assets/audio/reverberant_wsj/y_hat_2_260_az_tensor([285])_elev_tensor([-10])_sisdr_-10.949689865112305.wav"></audio>
+        <p><strong>Ground Truth Speaker 1:</strong></p>
+        <audio controls src="assets/audio/reverberant_wsj/y1_260_az_tensor([335])_elev_tensor([0]).wav"></audio>
+
+        <p><strong>Ground Truth Speaker 2:</strong></p>
+        <audio controls src="assets/audio/reverberant_wsj/y2_260_az_tensor([285])_elev_tensor([-10]).wav"></audio>
+    </div>
+    </section>
+
+</body>
+
+</html>
