@@ -115,10 +115,7 @@ audio {
 /* Spectrogram rows: label left, images right */
 .spec-row {
     display: flex;
-    /* align-items: center; */
-    margin-bottom: 0.5rem;
     justify-content: center;
-    /* ⬅️ center all children */
 }
 
 .spec-label {
@@ -136,7 +133,6 @@ audio {
     margin: 0 auto;
     /* ⬅️ centers the whole container */
 }
-
 
 .spec-images img {
     height: 200px;
