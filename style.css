@@ -111,3 +111,36 @@ audio {
         max-width: 100%;
     }
 }
+
+/* Spectrogram rows: label left, images right */
+.spec-row {
+    display: flex;
+    /* align-items: center; */
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    /* ⬅️ center all children */
+}
+
+.spec-label {
+    width: 120px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.spec-images {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    margin: 0 auto;
+    /* ⬅️ centers the whole container */
+}
+
+
+.spec-images img {
+    height: 200px;
+    width: auto;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
