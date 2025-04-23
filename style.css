@@ -130,9 +130,10 @@ audio {
     display: flex;
     gap: 0.3rem;
     justify-content: center;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    margin: 0;
+    /* allow wrap if needed */
     max-width: 100%;
+    /* ⬅️ centers the whole container */
 }
 
 .spec-images img {
