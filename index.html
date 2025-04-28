@@ -57,8 +57,6 @@
                 We began with the anechoic and noise-free setting, where the proposed method demonstrated
                 superior extraction performance while successfully preserving the binaural cues of the desired
                 signal.
-            </p>
-            <p>
                 Furthermore, we extended our approach to the reverberant setting, aiming to perform
                 dereverberation alongside target speaker extraction. This resulted in a method that remains
                 effective even in reverberant environments, maintaining the speech clarity and its sense of
@@ -90,63 +88,94 @@
     </section>
 
     <section id="demos">
-        <h2>Audio Examples</h2>
-        <div class="demo-grid">
+        <h2>Audio Examples and spectrograms</h2>
 
-            <!-- Just copy this block and update content for more examples -->
-            <div class="demo-card">
-                <h3>From the WSJ0-CSR1 dataset in an anechoic — speaker 1 at -35°, speaker 2 at -90°</h3>
-                <p><strong>Mixture:</strong></p>
-                <audio controls src="assets/audio/anechoic_wsj/mix_0.wav"></audio>
+        <h4>Example from the From the WSJ0-CSR1 dataset in an anechoic — speaker 1 at -35°, speaker 2 at -90°</h4>
+        <div class="spec-row">
+            <div class="spec-images">
+                <div style="text-align: center;">
+                    <img src="assets/images/anechoic_wsj/mix_0.png" alt="Mixture spectrogram">
+                    <audio controls src="assets/audio/anechoic_wsj/mix_0.wav"></audio>
+                </div>
+                <div style="text-align: center;">
+                    <img src="assets/images/anechoic_wsj/y_hat_1_0_az_tensor([325])_elev_tensor([0]).png"
+                        alt="Speaker 1 spectrogram">
+                    <audio controls
+                        src="assets/audio/anechoic_wsj/y_hat_1_0_az_tensor([325])_elev_tensor([0]).wav"></audio>
+                </div>
+                <div style="text-align: center;">
+                    <img src="assets/images/anechoic_wsj/y_hat_2_0_az_tensor([270])_elev_tensor([-10]).png"
+                        alt="Speaker 2 spectrogram">
+                    <audio controls
+                        src="assets/audio/anechoic_wsj/y_hat_2_0_az_tensor([270])_elev_tensor([-10]).wav"></audio>
+                </div>
 
-                <p><strong>Extracted Speaker 1:</strong></p>
-                <audio controls
-                    src="assets/audio/anechoic_wsj/y_hat_1_0_az_tensor([325])_elev_tensor([0])_sisdr_-20.240114212036133.wav"></audio>
+                <div class="demo-card">
+                    <p><strong>Ground Truth Speaker 1:</strong></p>
+                    <audio controls src="assets/audio/anechoic_wsj/y1_0_az_tensor([325])_elev_tensor([0]).wav"></audio>
 
-                <p><strong>Extracted Speaker 2:</strong></p>
-                <audio controls
-                    src="assets/audio/anechoic_wsj/y_hat_2_0_az_tensor([270])_elev_tensor([-10])_sisdr_-20.710756301879883.wav"></audio>
+                    <p><strong>Ground Truth Speaker 2:</strong></p>
+                    <audio controls
+                        src="assets/audio/anechoic_wsj/y2_0_az_tensor([270])_elev_tensor([-10]).wav"></audio>
+                </div>
+            </div>
+        </div>
 
-                <p><strong>Ground Truth Speaker 1:</strong></p>
-                <audio controls src="assets/audio/anechoic_wsj/y1_0_az_tensor([325])_elev_tensor([0]).wav"></audio>
+        <h4>Example from the Librispeech dataset in an anechoic setting; speaker 1 at 20&deg; and speaker 2
+            at
+            80&deg;</h4>
+        <div class="spec-row">
+            <div class="spec-images">
+                <div style="text-align: center;">
+                    <img src="assets/images/anechoic_libri/mix_0.png" alt="Mixture spectrogram">
+                    <audio controls src="assets/audio/anechoic_libri/mix_0.wav"></audio>
+                </div>
+                <div style="text-align: center;">
+                    <img src="assets/images/anechoic_libri/y_hat_1_0_az_tensor([20])_elev_tensor([0]).png"
+                        alt="Speaker 1 spectrogram">
+                    <audio controls
+                        src="assets/audio/anechoic_libri/y_hat_1_0_az_tensor([20])_elev_tensor([0]).wav"></audio>
+                </div>
+                <div style="text-align: center;">
+                    <img src="assets/images/anechoic_libri/y_hat_2_0_az_tensor([80])_elev_tensor([0]).png"
+                        alt="Speaker 2 spectrogram">
+                    <audio controls
+                        src="assets/audio/anechoic_libri/y_hat_2_0_az_tensor([80])_elev_tensor([0]).wav"></audio>
 
-                <p><strong>Ground Truth Speaker 2:</strong></p>
-                <audio controls src="assets/audio/anechoic_wsj/y2_0_az_tensor([270])_elev_tensor([-10]).wav"></audio>
+                </div>
             </div>
             <div class="demo-card">
-                <h3>From the Librispeech dataset in an anechoic setting; speaker 1 at 20&deg; and speaker 2
-                    at
-                    80&deg;
-                </h3>
-                <p><strong>Mixture:</strong></p>
-                <audio controls src="assets/audio/anechoic_libri/mix_0.wav"></audio>
-
-                <p><strong>Extracted Speaker 1:</strong></p>
-                <audio controls
-                    src="assets/audio/anechoic_libri/y_hat_1_0_az_tensor([20])_elev_tensor([0])_sisdr_-18.300331115722656.wav"></audio>
-
-                <p><strong>Extracted Speaker 2:</strong></p>
-                <audio controls
-                    src="assets/audio/anechoic_libri/y_hat_2_0_az_tensor([80])_elev_tensor([0])_sisdr_-15.585834503173828.wav"></audio>
                 <p><strong>Ground Truth Speaker 1:</strong></p>
                 <audio controls src="assets/audio/anechoic_libri/y1_0_az_tensor([20])_elev_tensor([0]).wav"></audio>
 
                 <p><strong>Ground Truth Speaker 2:</strong></p>
                 <audio controls src="assets/audio/anechoic_libri/y2_0_az_tensor([80])_elev_tensor([0]).wav"></audio>
             </div>
+        </div>
+
+        <h4>Example from the Librispeech MLS French dataset in an anechoic setting; speaker 1 at 80&deg; and
+            speaker 2 at 15&deg;</h4>
+        <div class="spec-row">
+            <div class="spec-images">
+                <div style="text-align: center;">
+                    <img src="assets/images/anechoic_libri_fr/mix_472.png" alt="Mixture spectrogram">
+                    <audio controls src="assets/audio/anechoic_libri_fr/mix_472.wav"></audio>
+                </div>
+                <div style="text-align: center;">
+                    <img src="assets/images/anechoic_libri_fr/y_hat_1_472_az_tensor([80])_elev_tensor([0]).png"
+                        alt="Speaker 1 spectrogram">
+                    <audio controls
+                        src="assets/audio/anechoic_libri_fr/y_hat_1_472_az_tensor([80])_elev_tensor([0]).wav"></audio>
+                </div>
+                <div style="text-align: center;">
+                    <img src="assets/images/anechoic_libri_fr/y_hat_2_472_az_tensor([15])_elev_tensor([10]).png"
+                        alt="Speaker 2 spectrogram">
+                    <audio controls
+                        src="assets/audio/anechoic_libri_fr/y_hat_2_472_az_tensor([15])_elev_tensor([10]).wav"></audio>
+
+                </div>
+            </div>
             <div class="demo-card">
-                <h3>From the Librispeech MLS French dataset in an anechoic setting; speaker 1 at 80&deg; and
-                    speaker 2 at 15&deg;</h3>
-                <p><strong>Mixture:</strong></p>
-                <audio controls src="assets/audio/anechoic_libri_fr/mix_472.wav"></audio>
-
-                <p><strong>Extracted Speaker 1:</strong></p>
-                <audio controls
-                    src="assets/audio/anechoic_libri_fr/y_hat_1_472_az_tensor([80])_elev_tensor([0])_sisdr_-14.897455215454102.wav"></audio>
-
-                <p><strong>Extracted Speaker 2:</strong></p>
-                <audio controls
-                    src="assets/audio/anechoic_libri_fr/y_hat_2_472_az_tensor([15])_elev_tensor([10])_sisdr_-8.94835090637207.wav"></audio>
                 <p><strong>Ground Truth Speaker 1:</strong></p>
                 <audio controls
                     src="assets/audio/anechoic_libri_fr/y1_472_az_tensor([80])_elev_tensor([0]).wav"></audio>
@@ -155,54 +184,44 @@
                 <audio controls
                     src="assets/audio/anechoic_libri_fr/y2_472_az_tensor([15])_elev_tensor([10]).wav"></audio>
             </div>
+        </div>
 
-            <div class="demo-card">
-                <h3>From the WSJ0-CSR1 dataset in a reverberant setting; speaker 1 at -25&deg; and
-                    speaker 2 at -75&deg;</h3>
-                <p><strong>Mixture:</strong></p>
-                <audio controls src="assets/audio/reverberant_wsj/mix_260.wav"></audio>
-
-                <p><strong>Extracted Speaker 1:</strong></p>
-                <audio controls
-                    src="assets/audio/reverberant_wsj/y_hat_1_260_az_tensor([335])_elev_tensor([0])_sisdr_-13.085460662841797.wav"></audio>
-
-                <p><strong>Extracted Speaker 2:</strong></p>
-                <audio controls
-                    src="assets/audio/reverberant_wsj/y_hat_2_260_az_tensor([285])_elev_tensor([-10])_sisdr_-10.949689865112305.wav"></audio>
-                <p><strong>Ground Truth Speaker 1:</strong></p>
-                <audio controls src="assets/audio/reverberant_wsj/y1_260_az_tensor([335])_elev_tensor([0]).wav"></audio>
-
-                <p><strong>Ground Truth Speaker 2:</strong></p>
-                <audio controls
-                    src="assets/audio/reverberant_wsj/y2_260_az_tensor([285])_elev_tensor([-10]).wav"></audio>
-            </div>
-
-            <h2> Spectrograms of the Mixture and extracted signals (one channel only)</h2>
-            <h4>Sample from the Librispeech dataset in an anechoic setting; speaker 1 at 20&deg; and speaker 2
-                at
-                80&deg;</h4>
-            <div class="spec-row">
-                <div class="spec-images">
-                    <img src="assets/images/anechoic_libri/mix_0.png" alt="Mixture spectrogram">
-                    <img src="assets/images/anechoic_libri/y_hat_1_0_az_tensor([20])_elev_tensor([0])_sisdr_-18.300331115722656.png"
-                        alt="Speaker 1 spectrogram">
-                    <img src="assets/images/anechoic_libri/y_hat_2_0_az_tensor([80])_elev_tensor([0])_sisdr_-15.585834503173828.png"
-                        alt="Speaker 2 spectrogram">
-                </div>
-            </div>
-
-
-            <h4>Sample from the WSJ0-CSR1 dataset in a reverberant setting; speaker 1 at -25&deg; and
-                speaker 2 at -75&deg;;</h4>
-            <div class="spec-row">
-                <div class="spec-images">
+        <h4>Example from the WSJ0-CSR1 dataset in a reverberant setting; speaker 1 at -25&deg; and
+            speaker 2 at -75&deg;;</h4>
+        <div class="spec-row">
+            <div class="spec-images">
+                <div style="text-align: center;">
                     <img src="assets/images/reverberant_wsj/mix_260.png" alt="Mixture spectrogram">
-                    <img src="assets/images/reverberant_wsj/y_hat_1_260_az_tensor([335])_elev_tensor([0])_sisdr_-13.085460662841797.png"
+                    <audio controls src="assets/audio/reverberant_wsj/mix_260.wav"></audio>
+
+                </div>
+
+                <div style="text-align: center;">
+                    <img src="assets/images/reverberant_wsj/y_hat_1_260_az_tensor([335])_elev_tensor([0]).png"
                         alt="Speaker 1 spectrogram">
-                    <img src="assets/images/reverberant_wsj/y_hat_2_260_az_tensor([285])_elev_tensor([-10])_sisdr_-10.949689865112305.png"
+                    <audio controls
+                        src="assets/audio/reverberant_wsj/y_hat_1_260_az_tensor([335])_elev_tensor([0]).wav"></audio>
+
+                </div>
+
+                <div style="text-align: center;">
+                    <img src="assets/images/reverberant_wsj/y_hat_2_260_az_tensor([285])_elev_tensor([-10]).png"
                         alt="Speaker 2 spectrogram">
+                    <audio controls
+                        src="assets/audio/reverberant_wsj/y_hat_2_260_az_tensor([285])_elev_tensor([-10]).wav"></audio>
+
+                </div>
+                <div class="demo-card">
+                    <p><strong>Ground Truth Speaker 1:</strong></p>
+                    <audio controls
+                        src="assets/audio/reverberant_wsj/y1_260_az_tensor([335])_elev_tensor([0]).wav"></audio>
+
+                    <p><strong>Ground Truth Speaker 2:</strong></p>
+                    <audio controls
+                        src="assets/audio/reverberant_wsj/y2_260_az_tensor([285])_elev_tensor([-10]).wav"></audio>
                 </div>
             </div>
+        </div>
     </section>
 </body>
 

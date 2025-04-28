@@ -61,6 +61,7 @@ figcaption {
     background: #f9f9f9;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     font-size: 0.95rem;
+    height: 100px;
 }
 
 /* Compact audio grid */
@@ -96,42 +97,17 @@ audio {
     width: 180px;
 }
 
-@media (max-width: 900px) {
-
-    .abstract,
-    .figures {
-        flex: 1 1 100%;
-    }
-
-    .audio-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .demo-card {
-        max-width: 100%;
-    }
-}
-
-/* Spectrogram rows: label left, images right */
 .spec-row {
     display: flex;
-    justify-content: center;
-}
-
-.spec-label {
-    width: 120px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    text-align: right;
-    margin-right: 1rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .spec-images {
     display: flex;
-    gap: 0.3rem;
-    justify-content: center;
-    margin: 0;
-    /* max-width: 100%; */
+    gap: 1rem;
 }
 
 .spec-images img {
