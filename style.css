@@ -54,7 +54,7 @@ figcaption {
 
 .demo-card {
     flex: 1 1 260px;
-    /* max-width: 200px; */
+    max-width: 200px;
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 0.8rem;
