@@ -5,7 +5,7 @@ import torch
 from glob import glob
 from pathlib import Path
 
-def plot_spectrogram(samples, sr, nfft=512,hop_frac=4,name='plot',dir='/home/bari/workspace/bctse_site/assets/audio'):
+def plot_spectrogram(samples, sr, nfft=512,hop_frac=4,name='plot',dir=''):
     title = {'mix':'Mixture','spk1':'Speaker 1','spk2':'Speaker 2'}
     samples = samples.squeeze()
     if not torch.is_tensor(samples):
@@ -57,8 +57,7 @@ def plot_spectrogram(samples, sr, nfft=512,hop_frac=4,name='plot',dir='/home/bar
     d = Path(str(dir).replace('audio','images'))
     plt.savefig(d/f'{name}.png')
 
-if __name__=="__main__":
-    p = Path('/home/bari/workspace/bctse_site/assets/audio')
+def plot_dir_path(p):
     for dir_path in p.glob('*'):
         print(dir_path)
         names = dir_path.glob('*.wav')
@@ -67,3 +66,4 @@ if __name__=="__main__":
             shift=0
             wav,fs = sf.read(name)
             plot_spectrogram(wav[int(shift*fs):,0],fs,name=name.name.split('.wa')[0],dir=dir_path)
+            
