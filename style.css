@@ -41,7 +41,7 @@ figure {
 figcaption {
     font-size: 0.9rem;
     color: #555;
-    text-align: center;
+    /* text-align: left; */
 }
 
 /* Demo cards grid */
