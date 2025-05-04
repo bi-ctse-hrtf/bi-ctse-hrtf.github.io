@@ -41,27 +41,21 @@
         <div class="abstract">
             <h2>Abstract</h2>
             <p>
-                In this work, we aim to imitate the human ability to selectively attend to a single speaker,
-                even in the presence of multiple simultaneous talkers. To achieve this, we propose a novel
-                approach for TSE that leverages the listener’s HRTF to isolate the desired speaker. Notably,
-                our method does not rely on speaker embeddings, making our solution speaker independent and
-                enabling strong generalization across multiple speech datasets in different languages.
+              In this work, we aim to imitate the human ability to selectively attend to a single speaker, even in the presence of multiple simultaneous talkers.
+              To achieve this, we propose a novel approach for <strong>Binaural Target Speaker Extraction (Bi-TSE)</strong> that leverages the listener’s <strong>Head-Related Transfer Function (HRTF)</strong> to isolate the desired speaker.
+              Notably, our method does not rely on speaker embeddings, making it speaker-independent and enabling strong generalization across multiple speech datasets in different languages.
             </p>
+            
             <p>
-                We employ a fully complex-valued neural network that operates directly on the complex-valued
-                STFT of the mixed audio signals. This stands in contrast to conventional approaches that use
-                spectrograms or treat the real and imaginary components of the STFT as separate real-valued
-                inputs.
+              We employ a fully complex-valued neural network that operates directly on the complex-valued <strong>Short-Time Fourier Transform (STFT)</strong> of the mixed audio signals.
+              This deviates from conventional approaches that use spectrograms or treat the real and imaginary components of the <strong>STFT</strong> as separate real-valued inputs.
             </p>
+            
             <p>
-                We began with the anechoic and noise-free setting, where the proposed method demonstrated
-                superior extraction performance while successfully preserving the binaural cues of the desired
-                signal.
-                Furthermore, we extended our approach to the reverberant setting, aiming to perform
-                dereverberation alongside target speaker extraction. This resulted in a method that remains
-                effective even in reverberant environments, maintaining the speech clarity and its sense of
-                direction.
+              We begin by evaluating the method in an anechoic, noise-free scenario, where it demonstrates excellent extraction performance while effectively preserving the binaural cues of the target signal.
+              Next, we test a modified variant under mild reverberation conditions. This version remains robust in reverberant conditions, maintaining speech clarity, preserving source directionality, and simultaneously reducing reverberation.
             </p>
+
         </div>
 
         <div class="figures">
