@@ -33,37 +33,34 @@
 <body>
     <header>
         <h1>Target Speaker Extraction in a Binaural Setting using HRTFs</h1>
-        <p><strong>Paper:</strong> "Binaural Target Speaker Extraction using HRTFs and a Complex-Valued Neural Network"
+        <p><strong>Paper:</strong> "Binaural Target Speaker Extraction using HRTFs"
         </p>
     </header>
 
     <section id="intro" class="flex-row">
         <div class="abstract">
             <h2>Abstract</h2>
-            <p>
-                In this work, we aim to imitate the human ability to selectively attend to a single speaker, even in the
-                presence of multiple simultaneous talkers.
-                To achieve this, we propose a novel approach for <strong>Binaural Target Speaker Extraction
-                    (Bi-TSE)</strong> that leverages the listener’s <strong>Head-Related Transfer Function
-                    (HRTF)</strong> to isolate the desired speaker.
-                Notably, our method does not rely on speaker embeddings, making it speaker-independent and enabling
-                strong generalization across multiple speech datasets in different languages.
+            <p>In this work, we aim to imitate the human ability to selectively attend to a single speaker, even in the
+                presence of multiple simultaneous talkers. To achieve this, we propose a novel approach for binaural
+                target speaker extraction that leverages the listener’s <abbr
+                    title="Head-Related Transfer Function">HRTF</abbr> to isolate the desired speaker. Notably, our
+                method does not rely on speaker embeddings, making it speaker-independent and enabling strong
+                generalization across multiple speech datasets in different languages.</p>
+
+            <p>We employ a fully complex-valued neural network that operates directly on the complex-valued <abbr
+                    title="Short-Time Fourier Transform">STFT</abbr> of the mixed audio signals, and compare it to a
+                <abbr title="Real–Imaginary">RI</abbr>-based neural network, demonstrating the advantages of the former.
             </p>
 
-            <p>
-                We employ a fully complex-valued neural network that operates directly on the complex-valued
-                <strong>Short-Time Fourier Transform (STFT)</strong> of the mixed audio signals.
-                This deviates from conventional approaches that use spectrograms or treat the real and imaginary
-                components of the <strong>STFT</strong> as separate real-valued inputs.
-            </p>
+            <p>We first evaluate the method in an anechoic, noise-free scenario, where it achieves excellent extraction
+                performance while faithfully preserving the binaural cues of the target signal. We then extend the
+                evaluation to reverberant conditions. Our method proves robust, maintaining speech clarity and source
+                directionality while simultaneously reducing reverberation.</p>
 
-            <p>
-                We begin by evaluating the method in an anechoic, noise-free scenario, where it demonstrates excellent
-                extraction performance while effectively preserving the binaural cues of the target signal.
-                Next, we test a modified variant under mild reverberation conditions. This version remains robust in
-                reverberant conditions, maintaining speech clarity, preserving source directionality, and simultaneously
-                reducing reverberation.
-            </p>
+            <p>A comparative analysis with existing binaural <abbr title="Target Speaker Extraction">TSE</abbr> methods
+                demonstrates that our approach attains performance on par with competing techniques in terms of noise
+                reduction and perceptual quality, while offering a clear advantage in preserving binaural cues.</p>
+
 
         </div>
 
@@ -72,10 +69,10 @@
                 <img src="assets/images/arc_1.png" alt="Block diagram of the proposed method" />
                 <figcaption>
                     Figure 1: A block diagram of the proposed method, where
-                    \( \boldsymbol{x}_b \) represents the mixed signal in the STFT domain,
+                    \( \boldsymbol{x}_b \) represents the mixed binaural signal in the STFT domain,
                     \( \boldsymbol{h}_{hrtf}(\theta_d,\phi_d,k) \) denotes denotes the (frequency-domain) HRTF of the
                     desired speaker’s DOA, and \( \hat{\tilde{\boldsymbol{s}}}_d \) represents the STFT of estimated
-                    desierd signal.
+                    binaural desierd signal.
                 </figcaption>
             </figure>
 
